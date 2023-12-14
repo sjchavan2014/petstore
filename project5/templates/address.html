@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Addersss</title>
+</head>
+<body>
+    {% if data %}
+
+
+    {% for i in data %}
+    <h5>City:{{i.city}}</h5>
+    <h5>Pincode:{{i.pincode}}</h5>
+    <h5>state:{{i.state}}</h5>
+
+    {% endfor %}
+
+{% else %}
+    <form action="" method="POST">
+        {% csrf_token %}
+        city:<input type="text" name="city"/>
+        <br><br>
+        pincode:<input type="text" name="pincode"/>
+        <br><br>
+        state:<input type="text" name="state"/>
+        <br><br>
+        <input type="submit" value="submit" />
+
+    </form>
+{% endif %}
+      
+    
+</body>
+</html>
